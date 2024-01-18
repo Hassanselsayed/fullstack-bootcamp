@@ -17,7 +17,7 @@ const readline = require('readline').createInterface({
   output: process.stdout
 });
 
-readline.question('Who are you? ', name => {
-  console.log(`Hey there ${name}!`);
+readline.question('Enter the temperature in Fahrenheit ', name => {
+  console.log(`The temperature is ${Math.ceil((name - 32) * (5 / 9))} degrees C!`);
   readline.close();
 });
