@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,29 +33,27 @@
       <button type="submit" class="form-submit">Go</button>
     </form>
     <section id="cards" class="cards">
-      <article class="card-item">
-        <h2 class="card-activity">
-          <%= data.activity %>
-        </h2>
-        <div class="card-info">
-          <span class="card-type">
-            <%= data.type %>
-          </span>
-          <span class="card-participants">
-            participants:
-            <span class="card-number"><%= data.participants %></span>
-          </span>
+      <% if (!locals.error) { %>
+        <article class="card-item">
+          <h2 class="card-activity">
+            <%= data.activity %>
+          </h2>
+          <div class="card-info">
+            <span class="card-type">
+              <%= data.type %>
+            </span>
+            <span class="card-participants">
+              participants:
+              <span class="card-number"><%= data.participants %></span>
+            </span>
+          </div>
+        </article>
+      <% } else { %>
+        <div id="tag-error" class="tag-error">
+          <%= error %>
         </div>
-      </article>
-
-
-      <div id="tag-error" class="tag-error">
-        <!-- Show any errors that were sent from the backend -->
-      </div>
-
+      <% }  %>
     </section>
   </div>
-
 </body>
-
 </html>
