@@ -23,6 +23,7 @@ db.query("SELECT * FROM flags", (err, res) => {
   } else {
     quiz = res.rows;
   }
+  db.end();
 })
 
 
